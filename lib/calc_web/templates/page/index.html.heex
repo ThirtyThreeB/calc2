@@ -1,3 +1,21 @@
+<div class="row">
+  <%= form_for @conn, Routes.page_path(@conn, :index), fn f -> %>
+  <div class="col">
+    <%= number_input f, :first %>
+  </div>
+  <div class="col">
+    <%= select(f, :operator, ["+": "+", "-": "-", "*": "*", "/": "/"])%>
+  </div>
+  <div class="col">
+    <%= number_input f, :second %>
+  </div>
+  <div class="col">
+    <%= submit "Kablooie!!" %>
+  </div>
+  <% end %>
+</div>
 <div>
-  yo shorty
+  <%= if @result do %>
+    <%= @params["first"] %><%= @params["operator"] %><%= @params["second"] %>=<%= @result %>
+  <% end %>
 </div>
