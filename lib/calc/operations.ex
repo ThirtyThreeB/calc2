@@ -2,6 +2,7 @@ defmodule Calc.Operations do
   def calculate(nil), do: nil
 
   def calculate(first, second, operator) do
+    IO.inspect(binding(), label: "binding")
     ans =
     case operator do
       "+" ->

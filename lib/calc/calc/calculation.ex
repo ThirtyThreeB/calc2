@@ -4,6 +4,7 @@ defmodule Calc.Calculation do
 
   schema "calculations" do
     field :equation, :string
+    field :user_id, :integer
 
     timestamps()
   end
@@ -11,7 +12,7 @@ defmodule Calc.Calculation do
   @doc false
   def changeset(calculation, attrs) do
     calculation
-    |> cast(attrs, [:equation])
-    |> validate_required([:equation])
+    |> cast(attrs, [:equation, :user_id])
+    |> validate_required([:equation, :user_id])
   end
 end

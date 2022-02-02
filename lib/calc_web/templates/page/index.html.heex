@@ -21,9 +21,11 @@
 </div>
 <h5>History</h5>
 <div>
-  <%= for c <- @calculations do %>
-    <li>
-      <%= c.equation %>
-    </li>
+  <%= if @history do %>
+    <%= for h <- @history do %>
+      <li>
+        <%= h.equation %>
+      </li>
+    <% end %>
   <% end %>
 </div>
